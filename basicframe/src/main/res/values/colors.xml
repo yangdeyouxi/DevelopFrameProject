@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="alpha_background">#99222222</color>
+    <color name="white">#ffffffff</color>
+
+    <color name="text_level_s">#000000</color><!--重要文字-->
+    <color name="text_level_1">#ff262626</color><!--一级文字-->
+    <color name="text_level_2">#777777</color><!--  二级文字-->
+    <color name="text_level_3">#FFA7A7A7</color><!--说明/简介 -->
+</resources>

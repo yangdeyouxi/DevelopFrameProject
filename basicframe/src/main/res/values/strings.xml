@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">BasicFrame</string>
+    <string name="app_name">GuluTool</string>
+    <string name="loading_more">加载中...</string>
+    <string name="loading_no_more">到底啦</string>
+
+    <string name="unknow_wrong_try_later">未知错误，请稍后重新尝试</string>
+
+    <string name="message_permission_rationale">Grant the following permissions to continue the program:\n\n%1$s</string>
+    <string name="message_permission_always_failed">We need these permissions, please give us permission in the settings:\n\n%1$s</string>
+
+    <string name="permission_setting">Permission Setting</string>
+
+    <string name="title_dialog">Tips</string>
+
+    <string name="setting">Setting</string>
+    <string name="resume">Resume</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="no">NO</string>
+    <string name="rich_scan">扫一扫</string>
+
 </resources>

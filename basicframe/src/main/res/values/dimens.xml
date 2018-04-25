@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_size">18sp</dimen>
+    <dimen name="nav_icon_padding">16dp</dimen>
+    <dimen name="nav_bar_height">48dp</dimen>
+
+    <dimen name="text_level_s">18sp</dimen><!--重要文字-->
+    <dimen name="text_level_1">16sp</dimen><!--一级文字-->
+    <dimen name="text_level_2">14sp</dimen><!--  二级文字-->
+    <dimen name="text_level_3">12sp</dimen><!--说明/简介 -->
+
+</resources>
