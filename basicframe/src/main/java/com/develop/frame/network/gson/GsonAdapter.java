@@ -12,6 +12,7 @@ public class GsonAdapter {
     public static Gson buildGson() {
         Gson gson = null;
         if (gson == null) {
+            //将"",null转换为int、long、double的0、0.00 这些都是惯的
             gson = new GsonBuilder()
                     .registerTypeAdapter(Integer.class, new IntegerDefault0Adapter())
                     .registerTypeAdapter(int.class, new IntegerDefault0Adapter())

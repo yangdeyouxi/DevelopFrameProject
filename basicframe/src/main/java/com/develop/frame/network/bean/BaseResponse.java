@@ -9,6 +9,7 @@ package com.develop.frame.network.bean;
  *     }
  *     success: true/ false
  * }
+ * 返回值的bean定义，这里需要和服务器协商好
  */
 
 public class BaseResponse<T> {

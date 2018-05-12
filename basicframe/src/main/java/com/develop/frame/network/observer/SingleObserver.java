@@ -1,7 +1,6 @@
 package com.develop.frame.network.observer;
 
 import com.develop.frame.bases.BasePresenter;
-import com.develop.frame.network.bean.BaseResponse;
 import com.develop.frame.network.bean.ErrorBean;
 import com.develop.frame.network.exception.ApiException;
 
@@ -9,18 +8,18 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Created by sam on 2017/12/7.
+ * Created by yangjh on 2018/4/30.
  */
 
-public abstract class BaseObserver<T> implements Observer<BaseResponse<T>> {
+public abstract class SingleObserver<T> implements Observer<T> {
 
     BasePresenter mBasePresenter;
 
-    public BaseObserver(BasePresenter basePresenter){
+    public SingleObserver(BasePresenter basePresenter) {
         mBasePresenter = basePresenter;
     }
 
-    public BaseObserver(){
+    public SingleObserver() {
 
     }
 
@@ -40,10 +39,11 @@ public abstract class BaseObserver<T> implements Observer<BaseResponse<T>> {
 
     /**
      * 开始调用
+     *
      * @param d
      */
-    protected void onStart(Disposable d){
-        if(null != mBasePresenter){
+    protected void onStart(Disposable d) {
+        if (null != mBasePresenter) {
             mBasePresenter.addDisposable(d);
         }
     }
@@ -58,15 +58,17 @@ public abstract class BaseObserver<T> implements Observer<BaseResponse<T>> {
     }
 
     @Override
-    public void onNext(BaseResponse<T> baseResponse) {
-        if (baseResponse.getSuccess()){
-            onSuccess(baseResponse.getData());
-        }else{
-            ErrorBean errorBean = new ErrorBean(baseResponse.getMessage());
-            errorBean.setErrorCode(-1);
-            onFail(errorBean);
-        }
+    public void onNext(T baseResponse) {
+//        if (baseResponse.getSuccess()) {
+//            onSuccess(baseResponse.getData());
+//        } else {
+//            ErrorBean errorBean = new ErrorBean(baseResponse.getMessage());
+//            errorBean.setErrorCode(-1);
+//            onFail(errorBean);
+//        }
+        onSuccess(baseResponse);
     }
+
     @Override
     public void onError(Throwable e) {
         ErrorBean error = ApiException.handleException(e).getErrorBean();

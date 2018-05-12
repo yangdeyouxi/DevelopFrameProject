@@ -8,7 +8,6 @@ import com.develop.frame.network.interceptor.AddCookiesInterceptor;
 import com.develop.frame.network.interceptor.CacheInterceptor;
 import com.develop.frame.network.interceptor.HeaderInterceptor;
 import com.develop.frame.network.interceptor.ReceivedCookiesInterceptor;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.io.InputStream;
@@ -88,15 +87,16 @@ public class GlobalRxHttp {
      */
     public GlobalRxHttp setLog(boolean isShowLog) {
         if (isShowLog) {
-            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message -> {
-                message = message.trim();
-                if (message.startsWith("{")){
-                    Logger.t("GlobalRxHttpUtils").json(message);
-                }else{
-                   Logger.t("RxHttpUtils").d(message);
-                }
-
-            });
+//            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message -> {
+//                message = message.trim();
+//                if (message.startsWith("{")){
+//                    Logger.t("GlobalRxHttpUtils").json(message);
+//                }else{
+//                   Logger.t("RxHttpUtils").d(message);
+//                }
+//
+//            });
+            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             getGlobalOkHttpBuilder().addInterceptor(loggingInterceptor);
         }

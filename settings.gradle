@@ -1,1 +1,1 @@
-include ':app', ':basicframe', ':thirdparty'
+include ':app', ':basicframe', ':thirdparty', ':customflow'
