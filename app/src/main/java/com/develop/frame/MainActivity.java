@@ -5,6 +5,8 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Toast;
 
 import com.develop.frame.demo.MainFragment;
 
@@ -25,7 +27,12 @@ public class MainActivity extends AppCompatActivity {
         DouBanGetter getter = new DouBanGetter();
         getter.gett();
 
-
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"showToast",Toast.LENGTH_SHORT).show();
+            }
+        });
         setDefaultFragment();
     }
 
